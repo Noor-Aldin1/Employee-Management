@@ -2,7 +2,7 @@
   <div class="header">
       <!-- Logo -->
       <div class="header-left">
-          <a href="admin-dashboard.html" class="logo">
+          {{-- <a href="admin-dashboard.html" class="logo">
               <img src="{{ url('mentors_css/images/logo.png') }}" alt="Logo" />
           </a>
           <a href="admin-dashboard.html" class="logo collapse-logo">
@@ -10,7 +10,7 @@
           </a>
           <a href="admin-dashboard.html" class="logo2">
               <img src="assets/img/logo2.png" width="40" height="40" alt="Logo" />
-          </a>
+          </a> --}}
       </div>
       <!-- /Logo -->
 
@@ -24,7 +24,7 @@
 
       <!-- Header Title -->
       <div class="page-title-box">
-          <h3>Dreams Technologies</h3>
+          <h3>Technologies</h3>
       </div>
       <!-- /Header Title -->
 
@@ -33,19 +33,7 @@
       <!-- Header Menu -->
       <ul class="nav user-menu">
           <!-- Search -->
-          <li class="nav-item">
-              <div class="top-nav-search">
-                  <a href="javascript:void(0);" class="responsive-search">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                  </a>
-                  <form action="https://smarthr.dreamstechnologies.com/html/template/search.html">
-                      <input class="form-control" type="text" placeholder="Search here" />
-                      <button class="btn" type="submit">
-                          <i class="fa-solid fa-magnifying-glass"></i>
-                      </button>
-                  </form>
-              </div>
-          </li>
+
           <!-- /Search -->
 
           <!-- ----profile-- -->
