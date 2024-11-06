@@ -13,8 +13,8 @@ class DepartmentController extends Controller
     // Display a listing of all departments
     public function index()
     {
-        $departments = Department::all(); // Fetch all departments
-        return view('departments.index', compact('departments'));
+        $departments = Department::paginate(10);
+        return view('admin.pages.all_departments', compact('departments'));
     }
 
     // Show the form to create a new department
@@ -74,8 +74,14 @@ class DepartmentController extends Controller
     public function destroy($id)
     {
         $department = Department::findOrFail($id);
+
+        // Delete the department
         $department->delete();
 
-        return redirect()->route('departments.index')->with('success', 'Department deleted successfully.');
+        // Return a JSON response indicating success
+        return response()->json([
+            'status' => true,
+            'message' => 'Department deleted successfully.',
+        ]);
     }
 }
