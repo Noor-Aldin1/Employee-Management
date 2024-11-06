@@ -98,6 +98,13 @@
                             <i class="fa-solid fa-plus"></i> Add Employee
                         </a>
                     </div>
+                    <div class="col-auto float-end ms-auto">
+                        <!-- Link to PDF report generation -->
+                        <a href="{{ route('department.report.pdf') }}" class="btn add-btn">
+                            <i class="fa-solid fa-print"></i> Print Employee Report
+                        </a>
+                    </div>
+
                 </div>
             </div>
             <!-- /Page Header -->
@@ -170,8 +177,7 @@
 
         @include('admin.pages.partials.add_employer')
         @include('admin.pages.partials.update_employer')
-        {{--  --}}
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
         <script>
             // Confirm Delete function
@@ -188,7 +194,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             url: `{{ route('employees.destroy', ':id') }}`.replace(':id',
-                            employeeId), // Replace :id with actual employeeId
+                                employeeId), // Replace :id with actual employeeId
                             type: 'DELETE',
                             data: {
                                 _token: '{{ csrf_token() }}'
@@ -197,7 +203,7 @@
                                 if (response.success) {
                                     Swal.fire('Deleted!', response.message, 'success').then(() => {
                                         location
-                                    .reload(); // Reload the page after successful deletion
+                                            .reload(); // Reload the page after successful deletion
                                     });
                                 } else {
                                     Swal.fire('Error!', response.message ||
