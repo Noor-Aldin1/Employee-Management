@@ -6,50 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department Report</title>
 
-    <link rel="stylesheet" href="pdf.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .department {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+            /* Prevents page breaks within a department section */
+        }
+
+        .department h3 {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .department p {
+            font-style: italic;
+            margin: 0 0 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-    }
-
-    .department {
-        margin-bottom: 20px;
-    }
-
-    .department h3 {
-        background-color: #f4f4f4;
-        padding: 10px;
-        margin: 0;
-    }
-
-    .department p {
-        font-style: italic;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-    }
-
-    table,
-    th,
-    td {
-        border: 1px solid black;
-    }
-
-    th,
-    td {
-        padding: 8px;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f4f4f4;
-    }
-</style>
 
 <body>
     <h2>Employee Report by Department</h2>

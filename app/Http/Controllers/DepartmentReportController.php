@@ -25,7 +25,11 @@ class DepartmentReportController extends Controller
             $mpdf->WriteHTML($pdfContent);
 
             // Output the PDF to the browser
-            return $mpdf->Output('Department_Report.pdf', 'I'); // 'I' for inline display in the browser
+            $mpdf->Output('Department_Report.pdf', 'S'); // Save output to a string for AJAX response
+            return response()->make($mpdf->Output(), 200, [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="Department_Report.pdf"',
+            ]); // 'I' for inline display in the browser
         } catch (\Exception $e) {
             Log::error('PDF Generation failed: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to generate PDF. Please try again later.']);
